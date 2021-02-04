@@ -15,7 +15,7 @@ int main(void)
 	printf("%d ", n);
 	if (n == 0)
 	{
-
+		printf("is zero\n");
 	}
 	else
 	{
