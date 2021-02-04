@@ -14,7 +14,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	absres = fabs(n % 10);
+	absres = n % 10;
 	printf("Last digit of %d is %g and is ", n, absres);
 	if (absres > 5)
 	{
