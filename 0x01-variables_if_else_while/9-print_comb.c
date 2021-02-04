@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
 
 /**
  * main - funciont is the funcion the program start's running
