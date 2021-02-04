@@ -23,8 +23,7 @@ int main(void)
 						putchar(' ');
 						putchar(y1 + '0');
 						putchar(y2 + '0');
-						if ((x1 != 9 ||  x2 != 8) || \
-						    (y1 != 9 || y2 != 9))
+						if ((x1 != 9 ||  x2 != 8) || (y1 != 9 || y2 != 9))
 						{
 							putchar(',');
 							putchar(' ');
