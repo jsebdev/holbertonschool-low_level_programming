@@ -16,19 +16,20 @@ int main(void)
 			{
 				for (y2 = 0; y2 <= 9; y2++)
 				{
-					if (y1 > x1 || (y1 == x1 && y2 > x2))
+				if (y1 > x1 || (y1 == x1 && y2 > x2))
+				{
+					putchar(x1 + '0');
+					putchar(x2 + '0');
+					putchar(' ');
+					putchar(y1 + '0');
+					putchar(y2 + '0');
+					if ((x1 != 9 ||  x2 != 8) ||
+					    (y1 != 9 || y2 != 9))
 					{
-						putchar(x1 + '0');
-						putchar(x2 + '0');
+						putchar(',');
 						putchar(' ');
-						putchar(y1 + '0');
-						putchar(y2 + '0');
-						if ((x1 != 9 ||  x2 != 8) || (y1 != 9 || y2 != 9))
-						{
-							putchar(',');
-							putchar(' ');
-						}
 					}
+				}
 
 				}
 			}
