@@ -4,3 +4,4 @@ c
 *.s
 *.out
 quote
+*#*

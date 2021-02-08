@@ -6,7 +6,7 @@
  **/
 int main(void)
 {
-	int x1, x2, y1, y2;
+	int x1, x2, y1, y2, counter = 0;
 
 	for (x1 = 0; x1 <= 9; x1++)
 	{
@@ -16,25 +16,28 @@ int main(void)
 			{
 				for (y2 = 0; y2 <= 9; y2++)
 				{
-				if (y1 > x1 || (y1 == x1 && y2 > x2))
-				{
-					putchar(x1 + '0');
-					putchar(x2 + '0');
-					putchar(' ');
-					putchar(y1 + '0');
-					putchar(y2 + '0');
-					if ((x1 != 9 ||  x2 != 8) ||
-					    (y1 != 9 || y2 != 9))
+					counter++;
+					if (y1 > x1 || (y1 == x1 && y2 > x2))
 					{
-						putchar(',');
+						putchar(x1 + '0');
+						putchar(x2 + '0');
 						putchar(' ');
+						putchar(y1 + '0');
+						putchar(y2 + '0');
+						if ((x1 != 9 ||  x2 != 8) ||
+						    (y1 != 9 || y2 != 9))
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
-				}
 
 				}
 			}
 		}
 	}
+	printf("Ciclos: %d\n", counter);
+
 	putchar('\n');
 	return (0);
 }
