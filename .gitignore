@@ -5,4 +5,4 @@ c
 *.out
 quote
 *#*
-*-main.c
+*main.c
