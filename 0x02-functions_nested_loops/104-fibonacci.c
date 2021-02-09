@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+
 int main(void)
 {
 	unsigned int i = 3;
