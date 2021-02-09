@@ -2,10 +2,6 @@
 
 /**
  * Main - main fuction
- * @parameterx: No parameters
-(* a blank line
- * Description: Main fuction
-(* section header: stdio.h
  * Return: always return zero
  */
 int main(void)
