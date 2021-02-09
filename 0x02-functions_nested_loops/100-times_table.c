@@ -16,8 +16,8 @@ void print_times_table(int n)
 			_putchar('0');
 			if (n != 0)
 			{
-				_putchar(',');
-				_putchar(' ');
+			_putchar(',');
+			_putchar(' ');
 			}
 			for (j = 1; j <= n; j++)
 			{
@@ -25,21 +25,13 @@ void print_times_table(int n)
 				first_digit = mul / 100;
 				second_digit = (mul - first_digit * 100) / 10;
 				if (first_digit == 0)
-				{
 					_putchar(' ');
-				}
 				else
-				{
 					_putchar(first_digit + '0');
-				}
 				if (second_digit == 0 && first_digit == 0)
-				{
 					_putchar(' ');
-				}
 				else
-				{
 					_putchar(second_digit + '0');
-				}
 				_putchar((mul % 10) + '0');
 				if (j != n)
 				{
