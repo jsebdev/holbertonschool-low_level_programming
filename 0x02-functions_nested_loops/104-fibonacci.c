@@ -2,12 +2,12 @@
 #include <string.h>
 int main(void)
 {
-	int i = 3;
+	unsigned int i = 3;
 	unsigned long int num1 = 2, num2 = 1, aux, overload1 = 0, overload2 = 0,
-		overaux, breaker = 1000000000000;
+		overaux, breaker = 1000000000000, lastfibo = 99;
 
 	printf("1, 2, ");
-	while (i <= 98)
+	while (i <= lastfibo)
 	{
 		aux = num1;
 		overaux = overload1;
@@ -24,8 +24,11 @@ int main(void)
 		else
 			printf("%lu", num1);
 
-		if (i != 98)
+		if (i != lastfibo)
+		{
+			/* printf(" este fue el %u\n", i); */
 			printf(", ");
+		}
 		i++;
 	}
 	printf("\n");
