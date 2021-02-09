@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * Main - main fuction
+ * main - main fuction
  * Return: always return zero
  */
 int main(void)
