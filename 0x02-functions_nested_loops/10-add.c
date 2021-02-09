@@ -1,7 +1,10 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * add - Do the add of two numbers
+ * @a: first number
+ * @b: second number
+ * Return: the add of the two parameters
  */
 int add(int a, int b)
 {

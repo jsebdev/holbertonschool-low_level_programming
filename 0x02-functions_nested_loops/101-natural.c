@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+
+/**
+ * main - main function to print the sum of some numbers
+ * Return: retunr always zero
+ */
+
 int main(void)
 {
 	int i = 0, suma = 0;

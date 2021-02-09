@@ -1,8 +1,11 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * print_last_digit - prints the last digit of a number
+ * @n: number to be checked
+ * Return: the last digit of a number
  */
+
 int print_last_digit(int n)
 {
 	/* l: last digit */

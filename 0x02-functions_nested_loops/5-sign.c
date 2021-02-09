@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * islower checks if a char is lowercase or uppercase
- * Returns 1 if char is lowercase
- * Returns 0 otherwise
+ * print_sign - prints the sign of a number
+ * @n: number to be checked
+ * Return: 1 if is above 0, 0 if it's zero and -1 if something else
  */
 
 int print_sign(int n)
@@ -15,12 +15,12 @@ int print_sign(int n)
 	}
 	else if (n == 0)
 	{
-		_putchar('-');
-		return (-1);
+		_putchar('0');
+		return (0);
 	}
 	else
 	{
-		_putchar('0');
-		return (0);
+		_putchar('-');
+		return (-1);
 	}
 }

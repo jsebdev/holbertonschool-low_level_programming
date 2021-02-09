@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * jack_bauer - print all the hours of a day
+ * Return: does not return anything
  */
 void jack_bauer(void)
 {

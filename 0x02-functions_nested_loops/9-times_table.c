@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * times_table - prints the times table up to nine
+ * Return: does not return anything
  */
 void times_table(void)
 {

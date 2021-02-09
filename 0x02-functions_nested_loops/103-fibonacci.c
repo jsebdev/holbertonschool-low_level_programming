@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * main - main function to print the sum of some fibonacci numbers
+ * Return: retunr always zero
+ */
 int main(void)
 {
 	int suma = 2;

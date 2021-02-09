@@ -2,8 +2,11 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * print_to_98 - prints all the numbers from the parameter up to 98
+ * @n: number to start printing with
+ * Return: does not return anything
  */
+
 void print_to_98(int n)
 {
 	if (n <= 98)
