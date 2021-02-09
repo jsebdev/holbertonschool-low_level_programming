@@ -4,7 +4,7 @@ int main(void)
 {
 	unsigned int i = 3;
 	unsigned long int num1 = 2, num2 = 1, aux, overload1 = 0, overload2 = 0,
-		overaux, breaker = 1000000000000, lastfibo = 98;
+		overaux, breaker = 1000000000000, lastfibo = 100;
 
 	printf("1, 2, ");
 	while (i <= lastfibo)
