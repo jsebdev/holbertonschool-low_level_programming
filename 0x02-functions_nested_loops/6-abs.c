@@ -2,7 +2,7 @@
 
 /**
  * _abs - returns the absolute value of a number
- * @n: number to be checked
+ * @a: number to be checked
  * Return: the absolute value of a number
  */
 

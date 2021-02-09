@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
- * _abs returns the absolute value of an int
+ * print_times_table - it prints the times table up to the parameter given
+ * @n: number to print the times table up to
+ * Return: does not return anything
  */
 void print_times_table(int n)
 {
