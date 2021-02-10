@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * main - print the first 98 fibonacci numbers
+ * Return: retunr always zero
+ */
 int main(void)
 {
 	unsigned int i = 3;
