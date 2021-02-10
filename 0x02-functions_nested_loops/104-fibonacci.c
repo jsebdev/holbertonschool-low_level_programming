@@ -19,8 +19,11 @@ int main(void)
 
 		num2 = aux;
 		overload2 = overaux;
+
 		if (overload1 != 0)
-			printf("%lu%lu", overload1, num1);
+		{
+			printf("%lu%012lu", overload1, num1);
+		}
 		else
 			printf("%lu", num1);
 
