@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * more_numbers - print numbers from 0 to 14 ten times
  * Return: does not return anything
  */

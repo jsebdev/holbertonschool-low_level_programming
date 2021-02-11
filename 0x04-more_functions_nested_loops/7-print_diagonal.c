@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * print_diagonal - prints a diagonal
  * @n: long of the line
  * Return: does not return anything

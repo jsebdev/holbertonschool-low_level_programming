@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - buzzfizz test
  * Return: Always returns 0
  */

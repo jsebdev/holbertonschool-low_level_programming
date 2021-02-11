@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * _isdigit - check if a char is a digit
  * @c: char to be checked
  * Return: 1 if c is a digit 0 if otherwise

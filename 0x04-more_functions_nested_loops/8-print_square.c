@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * print_square - prints a square
  * @size: long of the square's side
  * Return: does not return anything
