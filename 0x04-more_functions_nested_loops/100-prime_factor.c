@@ -14,6 +14,6 @@ int main(void)
 			n = n / i;
 		}
 	}
-	printf("%ld\n", i);
+	printf("%ld\n", i - 1);
 	return (0);
 }
