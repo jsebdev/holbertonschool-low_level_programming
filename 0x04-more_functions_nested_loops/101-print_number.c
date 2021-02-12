@@ -1,20 +1,19 @@
 #include "holberton.h"
-/* #include <stdio.h> */
+#include <stdio.h>
 
 /**
  * mypower - power of numbers
- * @a: base
  * @b: power
  * Return: power of a^b
  */
 
-int mypower(int a, int b)
+unsigned int mypower(unsigned int b)
 {
-	int i, r = 1;
+	unsigned int i, r = 1;
 
 	for (i = 0; i < b; i++)
 	{
-		r = r * a;
+		r = r * 10;
 	}
 	return (r);
 }
@@ -27,12 +26,11 @@ int mypower(int a, int b)
  */
 int getdigit(int n, int d)
 {
-	int potencia, potencia2;
+	unsigned int potencia;
 
-	potencia = mypower(10, d);
-	potencia2 = mypower(10, d - 1);
+	potencia = mypower(d - 1);
 
-	return ((((n % potencia) - (n % potencia2)) / potencia2));
+	return ((n / potencia) % 10);
 }
 
 /**
@@ -42,20 +40,24 @@ int getdigit(int n, int d)
  */
 void print_number(int n)
 {
-	unsigned int i, digito, started = 0;
+	int i, digito, started = 0;
 
 	if (n < 0)
 	{
 		/* printf("El valor original de n es %d\n", n); */
-		_putchar('-');
-		n = n * -1;
+		/* n = n + 10000000; */
 		/* printf("El nuevo valor de n es %d\n", n); */
+		n = -n;
+		/* printf("El nuevo valor de n es %d\n", n); */
+		/* n = n + 10000000; */
+		/* printf("El nuevo valor de n es %d\n", n); */
+		_putchar('-');
 	}
 	if (n == 0)
 	{
 		_putchar(0 + '0');
 	}
-	for (i = 11; i > 0; i--)
+	for (i = 10; i > 0; i--)
 	{
 		digito = getdigit(n, i);
 		/* _putchar(i + '0'); */
