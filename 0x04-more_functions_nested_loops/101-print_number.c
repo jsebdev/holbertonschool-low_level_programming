@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 
 /**
  * mypower - power of numbers
@@ -44,13 +44,7 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		/* printf("El valor original de n es %d\n", n); */
-		/* n = n + 10000000; */
-		/* printf("El nuevo valor de n es %d\n", n); */
 		n = -n;
-		/* printf("El nuevo valor de n es %d\n", n); */
-		/* n = n + 10000000; */
-		/* printf("El nuevo valor de n es %d\n", n); */
 		_putchar('-');
 	}
 	if (n == 0)
@@ -60,9 +54,6 @@ void print_number(int n)
 	for (i = 10; i > 0; i--)
 	{
 		digito = getdigit(n, i);
-		/* _putchar(i + '0'); */
-		/* _putchar('\n'); */
-		/* _putchar(digito + '0'); */
 		if (started == 1)
 		{
 			_putchar(digito + '0');
