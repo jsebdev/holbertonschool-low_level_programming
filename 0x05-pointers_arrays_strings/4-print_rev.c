@@ -1,7 +1,7 @@
 # include "holberton.h"
 
 /**
- * _print_rev - print a string in reverse
+ * print_rev - print a string in reverse
  * @s: string to print
  * Return: nothing
  */
