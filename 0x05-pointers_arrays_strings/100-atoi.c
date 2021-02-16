@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int len = 0, sign_num = 1, i = 0, no_num_yet = 0, res = 0;
+	int len = 0, sign_num = 1, i = 0, no_num_yet = 0, res = 0, newdigit;
 
 	for (; *(s + len) != 0; len++)
 	{
@@ -26,12 +26,13 @@ int _atoi(char *s)
 		/*Take all the numbers into a new char[]*/
 		if (*(s + len) >= '0' && *(s + len) <= '9')
 		{
-			res = res * 10 + *(s + len) - '0';
+			newdigit = *(s + len) - '0';
+			res = res * 10 + newdigit;
 			i++;
 			no_num_yet = 1;
 		}
 	}
-	/*If there is no numbers the output is cero, we also put the 0 last byte*/
+	/*Multiply by -1 if necesary*/
 	if (sign_num < 0)
 		res = -res;
 	return (res);
