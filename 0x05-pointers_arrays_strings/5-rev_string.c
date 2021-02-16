@@ -21,15 +21,9 @@ void rev_string(char *s)
 		else
 			break;
 	}
-
 	for (; len > 0; len--)
 	{
-		/* _putchar(*(saux + len - 1)); */
-		/* _putchar(*(saux + 1 - 1)); */
-		/* _putchar(*(saux + 2 - 1)); */
 		*(s + i) = *(saux + len - 1);
 		i++;
 	}
-
-	_putchar('\n');
 }
