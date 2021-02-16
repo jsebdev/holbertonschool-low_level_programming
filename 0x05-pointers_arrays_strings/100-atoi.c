@@ -27,13 +27,13 @@ int _atoi(char *s)
 		if (*(s + len) >= '0' && *(s + len) <= '9')
 		{
 			newdigit = *(s + len) - '0';
-			res = res * 10 + newdigit;
+			if (sign_num > 0)
+				res = res * 10 + newdigit;
+			else
+				res = res * 10 - newdigit;
 			i++;
 			no_num_yet = 1;
 		}
 	}
-	/*Multiply by -1 if necesary*/
-	if (sign_num < 0)
-		res = -res;
 	return (res);
 }
