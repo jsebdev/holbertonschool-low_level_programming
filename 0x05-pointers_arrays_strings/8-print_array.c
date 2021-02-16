@@ -2,6 +2,7 @@
 
 /**
  * print_array - print n elements of an int array
+ * @a: array to print
  * @n: number of elements to print
  * Return: nothing
  */
