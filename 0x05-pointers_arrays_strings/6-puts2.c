@@ -1,13 +1,7 @@
 # include "holberton.h"
 
 /**
- * rev_string - reverse a string
- * @s: string to reverse
- * Return: nothing
- */
-
-/**
- * _puts2 - print the even chars of a string
+ * puts2 - print the even chars of a string
  * @str: string to print
  * Return: nothing
  */
