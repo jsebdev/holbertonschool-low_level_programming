@@ -14,9 +14,9 @@ int _strcmp(char *s1, char *s2)
 	do {
 		diff = *(s1 + i) - *(s2 + i);
 		if (diff > 0)
-			diff = 15;
+			diff = 1;
 		if (diff < 0)
-			diff = -15;
+			diff = -1;
 		i++;
 	} while (diff == 0 && *(s1 + i) != 0 && *(s2 + i) != 0);
 	return (diff);
