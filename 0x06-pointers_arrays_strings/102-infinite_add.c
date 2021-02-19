@@ -22,7 +22,7 @@ int lenstring(char *s)
  * @a: string to reverse
  * Return: nothing
  */
-void *revstrn(char *a)
+void revstrn(char *a)
 {
 	int i = 0, n = 0;
 	char aux;
