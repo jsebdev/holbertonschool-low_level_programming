@@ -12,7 +12,6 @@ char *_strchr(char *s, char c)
 	unsigned int i = 0;
 	char *r = NULL;
 
-	printf("%c\n", c);
 	do {
 		if (*(s + i) == c)
 		{
