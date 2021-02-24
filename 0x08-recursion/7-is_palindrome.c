@@ -8,7 +8,6 @@
  * @len: bytes to check
  * Return: 1 if first len bytes of s is palindrome, 0 otherwise
  */
-
 int guess_palindrome(char *s, int len)
 {
 	if (len > 1)
