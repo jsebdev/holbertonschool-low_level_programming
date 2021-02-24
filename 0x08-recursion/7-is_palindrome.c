@@ -1,6 +1,5 @@
 #include "holberton.h"
-
-
+#include "2-strlen_recursion.c"
 /**
  * guess_palindrome - check if the first len bytes of string s
  * is a palindrome
@@ -19,14 +18,10 @@ int guess_palindrome(char *s, int len)
 			return (guess_palindrome(s, len));
 		}
 		else
-		{
 			return (0);
-		}
 	}
 	else
-	{
 		return (1);
-	}
 }
 
 /**
@@ -38,7 +33,6 @@ int is_palindrome(char *s)
 {
 	int len = 0;
 
-	while (*(s + len))
-		len++;
+	len = _strlen_recursion(s);
 	return (guess_palindrome(s, len));
 }
