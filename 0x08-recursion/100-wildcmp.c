@@ -9,13 +9,13 @@
  */
 void rem_str1_until_str2(char **s1, char **s2)
 {
-	if (**s1 == '\0')
-		return;
 	if (**s2 == '*')
 	{
 		*s2 = *s2 + 1;
 		rem_str1_until_str2(s1, s2);
 	}
+	if (**s1 == '\0')
+		return;
 	if (wildcmp(*s1, *s2))
 		return;
 	*s1 = *s1 + 1;
