@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd ..
+
+filename='files_to_bring'
+n=1
+while read line; do
+    #find -name "$line" -execdir cp {} ../0x09-static_libraries \;
+    echo "$line"
+n=$((n+1))
+done < $filename
