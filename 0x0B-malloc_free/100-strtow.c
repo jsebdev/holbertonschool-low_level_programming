@@ -53,10 +53,7 @@ char **strtow(char *str)
 	{
 		if ((*(str + i) == ' ' && *(str + i + 1) != ' ')
 		    || *(str + i + 1) == '\0')
-		{
-			/* printf("Encontramos palabra: %s\n", str + i + 1); */
 			num_words++;
-		}
 	}
 	if (num_words == 1)
 		return (NULL);
