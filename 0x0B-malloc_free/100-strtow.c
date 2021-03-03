@@ -39,7 +39,7 @@ char **strtow(char *str)
 	char **words;
 	int i, num_words = 0, counter = 0;
 
-	if (*str == '\0')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 	if (*str != ' ')
 	{
