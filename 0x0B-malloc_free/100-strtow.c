@@ -40,7 +40,9 @@ char **strtow(char *str)
 	int i, num_words = 0, counter = 0;
 
 	if (str == NULL || *str == '\0')
+	{
 		return (NULL);
+	}
 	if (*str != ' ')
 	{
 		num_words = 1;
@@ -56,7 +58,9 @@ char **strtow(char *str)
 			num_words++;
 		}
 	}
-	/* printf("num_words = %d\n", num_words); */
+	if (num_words == 1)
+		return (NULL);
+/* printf("num_words = %d\n", num_words); */
 	words = malloc(sizeof(char *) * num_words);
 	if (*str != ' ')
 	{
