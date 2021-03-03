@@ -22,13 +22,11 @@ char *cpy_word(char *str)
 		do {
 			*(nstr + i) = *(str + i);
 			i++;
-		} while (*(str + i) != ' ' && *(str + len) != '\0');
+		} while (*(str + i) != ' ' && *(str + i) != '\0');
 		return (nstr);
 	}
 	return (NULL);
-
 }
-
 
 /**
  * strtow - splits a string into words.
@@ -49,7 +47,8 @@ char **strtow(char *str)
 
 	for (i = 0; *(str + i); i++)
 	{
-		if (*(str + i) == ' ' && *(str + i + 1) != ' ')
+		if ((*(str + i) == ' ' && *(str + i + 1) != ' ')
+		    || *(str + i + 1) == '\0')
 		{
 			/* printf("Encontramos palabra: %s\n", str + i + 1); */
 			num_words++;
