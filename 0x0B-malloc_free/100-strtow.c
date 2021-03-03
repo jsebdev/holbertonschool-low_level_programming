@@ -39,6 +39,8 @@ char **strtow(char *str)
 	char **words;
 	int i, num_words = 0, counter = 0;
 
+	if (*str == '\0')
+		return (NULL);
 	if (*str != ' ')
 	{
 		num_words = 1;
