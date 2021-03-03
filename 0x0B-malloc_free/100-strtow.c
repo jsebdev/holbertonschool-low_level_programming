@@ -31,42 +31,42 @@ char *cpy_word(char *str)
 
 
 /**
- * alloc_grid - create a 2 dimensional array of integers
- * inizialiced with zeros.
- * @width: width
- * @height: height
- * Return: pointer to the matrix, NULL on failure
+ * strtow - splits a string into words.
+ * @str: string
+ * Return: return array of strings, each element is a word,
+ * last element is NULL
 */
 char **strtow(char *str)
 {
 	char **words;
 	int i, num_words = 0, counter = 0;
 
+	if (*str != ' ')
+	{
+		num_words = 1;
+		/* printf("empezamos con palabra\n"); */
+	}
+
 	for (i = 0; *(str + i); i++)
 	{
-
-		/* Aqui hay un error porque siempre estaremos sumando 1*/
-		
-		if (*str != ' ')
-			num_words = 1; printf("empezamos con palabra\n");
 		if (*(str + i) == ' ' && *(str + i + 1) != ' ')
 		{
-			printf("Encontramos palabra: %s\n", str + i + 1);
+			/* printf("Encontramos palabra: %s\n", str + i + 1); */
 			num_words++;
 		}
 	}
-	printf("num_words = %d\n", num_words);
+	/* printf("num_words = %d\n", num_words); */
 	words = malloc(sizeof(char *) * num_words);
+	if (*str != ' ')
+	{
+		*words = cpy_word(str);
+		counter++;
+	}
 	for (i = 0; *(str + i); i++)
 	{
-		if (*str != ' ')
-		{
-			*words = cpy_word(str);
-			counter++;
-		}
 		if (*(str + i) == ' ' && *(str + i + 1) != ' ')
 		{
-			printf("Encontramos palabra: %s\n", str + i + 1);
+			/* printf("Encontramos palabra: %s\n", str + i + 1); */
 			*(words + counter) = cpy_word(str + i + 1);
 			counter++;
 		}
