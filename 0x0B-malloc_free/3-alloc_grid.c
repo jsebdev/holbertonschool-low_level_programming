@@ -17,17 +17,20 @@ int **alloc_grid(int width, int height)
 	mat = malloc(sizeof(int *) * height);
 	if (mat == NULL)
 		return (NULL);
-	if (mat)
+
+	for (i = 0; i < height; i++)
 	{
-		for (i = 0; i < height; i++)
+		*(mat + i) = malloc(sizeof(int) * width);
+		if (*(mat + i) == NULL)
 		{
-			*(mat + i) = malloc(sizeof(int) * width);
-			if (*(mat + i) == NULL)
-				return (NULL);
-			/* put zeros on the just allocated pointer */
-			for (j = 0; j < width; j++)
-				*(*(mat + i) + j) = 0;
+			for (j = i - 1; j <= 0; j--)
+				free(*(mat + j));
+			free(mat);
+			return (NULL);
 		}
+		/* put zeros on the just allocated pointer */
+		for (j = 0; j < width; j++)
+			*(*(mat + i) + j) = 0;
 	}
 	return (mat);
 }
