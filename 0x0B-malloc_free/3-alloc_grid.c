@@ -15,11 +15,15 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 	mat = malloc(sizeof(int *) * height);
+	if (mat == NULL)
+		return (NULL);
 	if (mat)
 	{
 		for (i = 0; i < height; i++)
 		{
 			*(mat + i) = malloc(sizeof(int) * width);
+			if (*(mat + i) == NULL)
+				return (NULL);
 			/* put zeros on the just allocated pointer */
 			for (j = 0; j < width; j++)
 				*(*(mat + i) + j) = 0;
