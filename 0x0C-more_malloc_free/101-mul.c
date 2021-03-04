@@ -77,8 +77,29 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		*(r + maxln) = 0;
 		revstrn(r);
 	}
-	/* printf("n1 = %s\n", n1); */
-	/* printf("n2 = %s\n", n2); */
-	/* printf("r = %s\n", r); */
 	return (r);
+}
+
+
+/**
+ * main - multiply and print two numbers
+ * @argc: number of arguments
+ * @argv: vector of arguments
+ * Return: always cero
+ */
+
+int main(int argc, char **argv)
+{
+	char result[10];
+
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (98);
+	}
+
+
+	infinite_add(argv[1], argv[2], result, 10);
+	printf("%s\n", result);
+	return (0);
 }

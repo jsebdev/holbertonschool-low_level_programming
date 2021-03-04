@@ -36,7 +36,7 @@ char *cpy_word(char *str)
 */
 char **strtow(char *str)
 {
-	char **words;
+	char **words = NULL;
 	int i, num_words = 0, counter = 0;
 
 	if (str == NULL || *str == '\0')
