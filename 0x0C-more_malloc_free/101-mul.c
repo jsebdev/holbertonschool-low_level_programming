@@ -1,4 +1,101 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int lenstring(char *s);
+void revstrn(char *a);
+char *infinite_add(char *n1, char *n2, char *r, int *size_r);
+char *mul_digit(char *num, int len, char d, char *res, int *size_res);
+char *add_0s(char *num, int *len, int c);
+void switch_pointers(char **p0, char **p1, int *l0, int *l1);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
+
+
+
+/**
+ * _realloc - eallocates a memory block using malloc and free
+ * The contents will be copied to the newly allocated space,
+ * in the range from the start of ptr up to the minimum of
+ * the old and new sizes
+ * Description: If new_size > old_size, the “added” memory
+ * should not be initialized.
+ * If new_size == old_size do not do anything and return ptr
+ * If ptr is NULL, then the call is equivalent to malloc(new_size),
+ * for all values of old_size and new_size
+ * If new_size is equal to zero, and ptr is not NULL, then the
+ * call is equivalent to free(ptr). Return NULL
+ * @ptr: ointer to the memory previously allocated
+ * @old_size: is the size, in bytes, of the allocated space for ptr
+ * @new_size: is the new size, in bytes of the new memory block
+ * Return: pointer to allocated memory
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+{
+	char *nptr, *temp_ptr;
+	unsigned int i;
+
+	if (ptr != NULL && new_size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	if (old_size == new_size)
+		return (ptr);
+
+	if (ptr == NULL)
+		return (malloc(new_size));
+
+	nptr = malloc(new_size);
+	if (nptr == NULL)
+		return (NULL);
+
+	temp_ptr = (char *) ptr;
+	for (i = 0; i < new_size; i++)
+	{
+		if (i >= old_size)
+			break;
+		*(nptr + i) = *(temp_ptr + i);
+	}
+	free(ptr);
+	return ((void *)nptr);
+}
+
+/**
+ * string_nconcat - concatenates 2 strings
+ * @s1: first string
+ * @s2: second string
+ * @n: number of bytes to allocate
+ * Return: pointer to allocated memory wich  contains
+ * s1, followed by the first n bytes of s2
+ */
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	int len1 = 0, len2 = 0, i = 0;
+	char *nstr;
+
+	if (s1 != NULL)
+	{
+		while (*(s1 + len1))
+			len1++;
+	}
+	if (s2 != NULL)
+	{
+		while (*(s2 + len2))
+			len2++;
+	}
+	len2 = (len2 > (int) n) ? (int) n : len2;
+	nstr = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (nstr == NULL)
+		return (NULL);
+	for (i = 0; i < len1; i++)
+		*(nstr + i) = *(s1 + i);
+	for (; i < len1 + len2; i++)
+		*(nstr + i) = *(s2 + i - len1);
+	*(nstr + i) = '\0';
+	return (nstr);
+}
+
 
 /**
  * lenstring - gives lenght of a string
