@@ -51,7 +51,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	temp_ptr = (char *) ptr;
 	for (i = 0; i < new_size; i++)
 	{
-		if (i >= old_size)
+		if (i >= old_size + 1)
 			break;
 		*(nptr + i) = *(temp_ptr + i);
 	}
@@ -83,6 +83,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			len2++;
 	}
 	len2 = (len2 > (int) n) ? (int) n : len2;
+	/* if (n == 7) */
+	/* { */
+	/* 	printf("Inside nconcat\n"); */
+	/* 	printf("s1 = %s\nlen1 = %d\ns2 = %s\nlen2 = %d\n", s1, */
+	/* 	       len1, s2, len2); */
+	/* } */
 	nstr = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (nstr == NULL)
 		return (NULL);
@@ -91,6 +97,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (; i < len1 + len2; i++)
 		*(nstr + i) = *(s2 + i - len1);
 	*(nstr + i) = '\0';
+
+	/* if (n == 7) */
+	/* { */
+	/* 	printf("nstr = %s\n", nstr); */
+	/* } */
+
 	return (nstr);
 }
 
@@ -227,7 +239,9 @@ int main(int argc, char **argv)
 	{
 		*(facts + 0) = mul_digit(argv[1], len1, argv[2][len2 - i - 1],
 					 facts[0], facts_size + 0);
+		/* printf("mul %d - %s\n", i, facts[0]); */
 		*(facts + 0) = add_0s(facts[0], facts_size + 0, i);
+		/* printf("mul %d - %s\n", i, facts[0]); */
 		facts[2] = infinite_add(facts[0], facts[1], facts[2],
 					facts_size + 2);
 		switch_pointers(facts + 1, facts + 2, &facts_size[1],
@@ -262,7 +276,7 @@ void free_blocks(char **facts, int *facts_size)
  */
 char *add_0s(char *num, int *len, int c)
 {
-	char *ceros = malloc(sizeof(char) * c + 1);
+	char *ceros = malloc(sizeof(char) * (c + 1));
 	int i = 0;
 	char *res = NULL;
 
@@ -271,14 +285,29 @@ char *add_0s(char *num, int *len, int c)
 		*(ceros + i) = '0';
 	}
 	*(ceros + i) = 0;
+
+	/* if (c == 7) */
+	/* { */
+	/* 	printf("c = %d\nnum = %s\nlen = %d\n", c, num, *len); */
+	/* } */
 	num = _realloc(num, *len, *len + c);
 	if (num == NULL)
 	{
 		return (NULL);
 	}
 	*len = *len + c;
+	/* if (c == 7) */
+	/* { */
+	/* 	printf("c = %d\nnum = %s\nlen = %d\n", c, num, *len); */
+	/* } */
 
 	res = string_nconcat(num, ceros, c);
+	/* if (c == 7) */
+	/* { */
+	/* 	printf("c = %d\nnum = %s\nceros = %s\nres = %s\n", c, num, */
+	/* 	       ceros, res); */
+	/* } */
+
 	free(num);
 	free(ceros);
 	return (res);
