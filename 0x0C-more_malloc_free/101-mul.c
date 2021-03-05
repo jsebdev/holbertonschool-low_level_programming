@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int lenstring(char *s);
 void revstrn(char *a);
 char *infinite_add(char *n1, char *n2, char *r, int *size_r);
@@ -10,8 +9,6 @@ char *add_0s(char *num, int *len, int c);
 void switch_pointers(char **p0, char **p1, int *l0, int *l1);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
-
-
 
 /**
  * _realloc - eallocates a memory block using malloc and free
@@ -32,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *nptr, *temp_ptr;
+	char *nptr = NULL, *temp_ptr = NULL;
 	unsigned int i;
 
 	if (ptr != NULL && new_size == 0)
@@ -72,7 +69,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int len1 = 0, len2 = 0, i = 0;
-	char *nstr;
+	char *nstr = NULL;
 
 	if (s1 != NULL)
 	{
@@ -180,7 +177,7 @@ char *infinite_add(char *n1, char *n2, char *r, int *size_r)
  */
 void switch_pointers(char **p0, char **p1, int *l0, int *l1)
 {
-	char *temp_ptr;
+	char *temp_ptr = NULL;
 	int temp_len;
 
 	temp_ptr = *p0;
@@ -235,7 +232,7 @@ int main(int argc, char **argv)
 				&facts_size[2]);
 	}
 	printf("%s\n", facts[1]);
-	for (i = 0; i < 2; i++)
+	for (i = 0; i <= 2; i++)
 		free(*(facts + i));
 	free(facts);
 	free(facts_size);
@@ -253,7 +250,7 @@ char *add_0s(char *num, int *len, int c)
 {
 	char *ceros = malloc(sizeof(char) * c + 1);
 	int i = 0;
-	char *res;
+	char *res = NULL;
 
 	for (i = 0; i <  c; i++)
 	{
@@ -272,7 +269,6 @@ char *add_0s(char *num, int *len, int c)
 	free(ceros);
 	return (res);
 }
-
 
 /**
  * mul_digit - multiply number for a digit
