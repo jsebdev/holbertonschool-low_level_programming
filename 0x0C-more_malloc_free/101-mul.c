@@ -212,8 +212,8 @@ int main(int argc, char **argv)
 	}
 	len1 = lenstring(argv[1]);
 	len2 = lenstring(argv[2]);
-	if ((len1 == 1 && argv[1][0] == '0')
-	    || (len2 == 1 && argv[2][0] == '0'))
+	if ((argv[1][0] == '0')
+	    || (argv[2][0] == '0'))
 	{
 		free_blocks(facts, facts_size);
 		printf("0\n");
