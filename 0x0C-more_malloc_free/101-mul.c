@@ -307,6 +307,12 @@ char *mul_digit(char *num, int len, char d, char *res, int *size_res)
 
 	for (i = 0; i < len; i++)
 	{
+		if (num[len - i - 1] < '0' || num[len - i - 1] > '9'
+			|| d < '0' || d > '9')
+		{
+			printf("Error\n");
+			exit(98);
+		}
 		mul = (num[len - i - 1] - '0') * (d - '0') + carry;
 		*(res + i) = (mul % 10) + '0';
 		carry = mul / 10;
