@@ -9,6 +9,7 @@ char *add_0s(char *num, int *len, int c);
 void switch_pointers(char **p0, char **p1, int *l0, int *l1);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
+void free_blocks(char **facts, int *facts_size);
 
 /**
  * _realloc - eallocates a memory block using malloc and free
@@ -213,6 +214,7 @@ int main(int argc, char **argv)
 	if ((len1 == 1 && argv[1][0] == '0')
 	    || (len2 == 1 && argv[2][0] == '0'))
 	{
+		free_blocks(facts, facts_size);
 		printf("0\n");
 		return (0);
 	}
@@ -232,11 +234,23 @@ int main(int argc, char **argv)
 				&facts_size[2]);
 	}
 	printf("%s\n", facts[1]);
+	free_blocks(facts, facts_size);
+	return (0);
+}
+/**
+ * free_blocks - free factors and factors size array
+ * @facts: factors
+ * @facts_size: factors sizes array
+ * Return: nothing
+ */
+void free_blocks(char **facts, int *facts_size)
+{
+	int i;
+
 	for (i = 0; i <= 2; i++)
 		free(*(facts + i));
 	free(facts);
 	free(facts_size);
-	return (0);
 }
 
 /**
