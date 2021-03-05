@@ -4,7 +4,8 @@
 int lenstring(char *s);
 void revstrn(char *a);
 char *infinite_add(char *n1, char *n2, char *r, int *size_r);
-char *mul_digit(char *num, int len, char d, char *res, int *size_res);
+char *mul_digit(char *num, int len, char d, char *res,
+		int *size_res, char **f);
 char *add_0s(char *num, int *len, int c);
 void switch_pointers(char **p0, char **p1, int *l0, int *l1);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
@@ -223,10 +224,12 @@ int main(int argc, char **argv)
 		*(facts_size + i) = 1;
 		*(facts + i) = malloc(sizeof(char) * facts_size[i]);
 	}
+
+
 	for (i = 0; i < len2; i++)
 	{
 		*(facts + 0) = mul_digit(argv[1], len1, argv[2][len2 - i - 1],
-					 facts[0], facts_size + 0);
+					 facts[0], facts_size, facts);
 		*(facts + 0) = add_0s(facts[0], facts_size + 0, i);
 		facts[2] = infinite_add(facts[0], facts[1], facts[2],
 					facts_size + 2);
@@ -247,10 +250,16 @@ void free_blocks(char **facts, int *facts_size)
 {
 	int i;
 
-	for (i = 0; i <= 2; i++)
+
+	for (i = 0; i < 3; i++)
+	{
 		free(*(facts + i));
+	}
+
 	free(facts);
+
 	free(facts_size);
+
 }
 
 /**
@@ -294,16 +303,17 @@ char *add_0s(char *num, int *len, int c)
  * @size_res: size of buffer
  * Return: pointer to result
  */
-char *mul_digit(char *num, int len, char d, char *res, int *size_res)
+char *mul_digit(char *num, int len, char d, char *res, int *size_res, char **f)
 {
 	int i = 0, carry = 0, mul;
 
 	res = _realloc(res, *size_res, len + 1);
+
 	if (res == NULL)
 	{
 		return (NULL);
 	}
-
+	*f = res;
 	*size_res = len + 1;
 
 	for (i = 0; i < len; i++)
@@ -312,6 +322,7 @@ char *mul_digit(char *num, int len, char d, char *res, int *size_res)
 			|| d < '0' || d > '9')
 		{
 			printf("Error\n");
+			free_blocks(f, size_res);
 			exit(98);
 		}
 		mul = (num[len - i - 1] - '0') * (d - '0') + carry;
