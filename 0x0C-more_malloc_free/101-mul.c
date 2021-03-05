@@ -301,6 +301,7 @@ char *add_0s(char *num, int *len, int c)
  * @d: digit
  * @res: buffer to store result
  * @size_res: size of buffer
+ * @f: factors array in case we need to free them due to a error
  * Return: pointer to result
  */
 char *mul_digit(char *num, int len, char d, char *res, int *size_res, char **f)
