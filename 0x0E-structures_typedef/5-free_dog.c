@@ -1,13 +1,18 @@
 #include "dog.h"
 
 /**
- * new_dog - free memory for dog
+ * free_dog - free memory for dog
  * @d: dog
  * Return: nothing
  */
 void free_dog(dog_t *d)
 {
-	free(d->name);
-	free(d->owner);
-	free(d);
+	if (d != NULL)
+	{
+		if (d->name != NULL)
+			free(d->name);
+		if (d->owner != NULL)
+			free(d->owner);
+		free(d);
+	}
 }
