@@ -12,7 +12,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int nl = 0, ol = 0, i = 0;
 	dog_t *the_Dog;
 
-	the_Dog = malloc(sizeof(dog_t *));
+	the_Dog = malloc(sizeof(dog_t));
 	if (the_Dog != NULL)
 	{
 		while (*(name + nl))
@@ -45,9 +45,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(the_Dog);
 			return (NULL);
 		}
-		return (the_Dog);
 	}
-	return (NULL);
+	return (the_Dog);
 }
 
 
