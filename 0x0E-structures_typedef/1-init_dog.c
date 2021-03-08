@@ -12,25 +12,21 @@
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	int nl = 0, ol = 0, i = 0;
-
-	printf("hay que poner %s\n", name);
 	if (d != NULL)
 	{
 		while (*(name + nl))
 			nl++;
-		d->name = malloc(sizeof(char) * nl);
+		d->name = malloc(sizeof(char) * (nl + 1));
 		if (d->name != NULL)
 		{
 			for (i = 0; name[i] != 0; i++)
 				d->name[i] = name[i];
 		}
 		d->name[i] = 0;
-
-		printf("Escribimos %s\n", d->name);
 		d->age = age;
 		while (*(owner + ol))
 			ol++;
-		d->name = malloc(sizeof(char) * ol);
+		d->owner = malloc(sizeof(char) * (ol + 1));
 		if (d->owner != NULL)
 		{
 			for (i = 0; owner[i] != 0; i++)
