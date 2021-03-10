@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_FUNCTIONS
 #define HOLBERTON_FUNCTIONS
 
+#include <stdio.h>
+
 #define size_t int
 
 void print_name(char *name, void (*f)(char *));
