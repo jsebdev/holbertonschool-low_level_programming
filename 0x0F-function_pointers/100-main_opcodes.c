@@ -31,10 +31,9 @@ int main(int argc, char **argv)
 	for (i = 0; i < nbytes; i++)
 	{
 		printf("%x", *(pchar + i));
-		if (i == nbytes - 1)
-			printf("\n");
-		else
+		if (i != nbytes - 1)
 			printf(" ");
 	}
+	printf("\n");
 	return (0);
 }
