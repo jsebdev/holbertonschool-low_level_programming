@@ -6,12 +6,16 @@
 # 1 "hague.c"
 # 9 "hague.c"
 
+#include <stdio.h>
+
 char _DAH_[]="ETIANMSURWDKGOHVFaLaPJBXCYZQb54a3d2f16g7c8a90l?e'b.s;i,d:";
 main ( )
 {
-char *_DIT, *DAH_, *DIT_, *_DIT_, *malloc(), *gets( );
+char * _DIT,* DAH_,* DIT_, * _DIT_,* malloc (),* gets ( );
 
-for (_DIT=malloc(81), DIT_=_DIT++;_DIT==gets ( _DIT );__DIT('\n') )
+printf("hola");
+
+for ( _DIT=malloc ( 81 ),DIT_=_DIT++;_DIT==gets ( _DIT );__DIT('\n') )
 for ( DAH_=_DIT;
 *DAH_;
 __DIT ( *_DIT_?_DAH ( * DIT_ ):'?'),__DIT
