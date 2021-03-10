@@ -10,7 +10,6 @@
 int main(int argc, char **argv)
 {
 	int nbytes, i;
-	int (*pfun)(int, char **) = NULL;
 	unsigned char *pchar = NULL;
 
 	if (argc != 2)
