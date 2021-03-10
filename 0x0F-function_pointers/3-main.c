@@ -11,7 +11,6 @@ int main(int argc, char **argv)
 	int a, b, r;
 	int (*operator)(int, int) = NULL;
 
-	printf("argc = %d\n", argc);
 	if (argc != 4)
 	{
 		printf("Error\n");
