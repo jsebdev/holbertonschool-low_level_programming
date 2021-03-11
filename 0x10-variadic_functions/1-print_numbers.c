@@ -20,7 +20,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			if (i != n - 1)
 				printf("%s", separator);
 		}
-		printf("\n");
+		if (n > 0)
+			printf("\n");
 	}
 	va_end(list);
 }
