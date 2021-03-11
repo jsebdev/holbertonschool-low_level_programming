@@ -61,14 +61,14 @@ void finds(va_list *list)
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, j = 0, sl;
+	unsigned int i = 0, j = 0;
 	va_list list;
 	char *types = "cifs";
 
 	void (*fun[])(va_list *) = {findc, findi, findf, finds};
 
 	va_start(list, format);
-	sl = strlen(format);
+
 	while (format[i])
 	{
 		j = 0;
@@ -77,7 +77,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == types[j])
 			{
 				fun[j](&list);
-				if (i != sl - 1)
+				if (format[i + 1] != 0)
 					printf(", ");
 				break;
 			}
