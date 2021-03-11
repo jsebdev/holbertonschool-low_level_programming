@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 {
 	int nbytes, i;
 	unsigned char *pchar = NULL;
+	int (*dirmain)(int, char **);
 
 	if (argc != 2)
 	{
@@ -26,10 +27,16 @@ int main(int argc, char **argv)
 	}
 
 	pchar = (unsigned char *) main;
-
+	dirmain = main;
+	/* for (i = 0; i < nbytes; i++) */
+	/* { */
+	/* 	printf("%02x", *(pchar + i)); */
+	/* 	if (i != nbytes - 1) */
+	/* 		printf(" "); */
+	/* } */
 	for (i = 0; i < nbytes; i++)
 	{
-		printf("%02x", *(pchar + i));
+		printf("%02x", *((unsigned char *)dirmain + i));
 		if (i != nbytes - 1)
 			printf(" ");
 	}
