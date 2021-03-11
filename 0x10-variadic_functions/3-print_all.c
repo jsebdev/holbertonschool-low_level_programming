@@ -85,6 +85,7 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	printf("\n");
+	if (*format != 0)
+		printf("\n");
 	va_end(list);
 }
