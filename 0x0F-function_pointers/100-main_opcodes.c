@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 
 	for (i = 0; i < nbytes; i++)
 	{
-		printf("%x", *(pchar + i));
+		printf("%02x", *(pchar + i));
 		if (i != nbytes - 1)
 			printf(" ");
 	}
