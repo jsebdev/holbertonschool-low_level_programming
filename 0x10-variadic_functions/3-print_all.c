@@ -46,7 +46,7 @@ void finds(va_list *list)
 	char *s;
 
 	s = va_arg(*list, char*);
-	printf("%s", (*s == 0) ? "(nil)" : s);
+	printf("%s", (s == NULL) ? "(nil)" : s);
 }
 
 /**
