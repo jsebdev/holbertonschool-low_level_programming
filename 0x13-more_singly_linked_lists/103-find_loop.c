@@ -2,9 +2,10 @@
 
 
 /**
- * check_adrs2 - check if address is already in list
+ * check_adrs2 - check if address is already previous nodes
  * @adr: address to compare
- * @adrs: list of arrays to compare
+ * @head: list
+ * @nodes: nodes the list has gone throught so far
  * Return: 1 if addres is not yet in the list, 0 otherwise
  */
 int check_adrs2(const listint_t *adr, listint_t *head, int nodes)
