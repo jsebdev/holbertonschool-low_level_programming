@@ -66,7 +66,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *tmp_node;
 
 	if (head == NULL)
-		return(0);
+		return (0);
 
 	tmp_node = head;
 	while (tmp_node)
