@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints a listint_t linked list
- * @head: linked list.
+ * free_listint_safe - free a list
+ * @h: linked list.
  * Return:  the number of nodes in the list
  */
 size_t free_listint_safe(listint_t **h)

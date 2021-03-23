@@ -23,6 +23,7 @@ typedef struct listint_s
 
 /**
  * struct list_adr - singly linked list
+ * @adr: address
  * @next: points to the next node
  */
 typedef struct list_adr

@@ -5,7 +5,6 @@
  * @head: list to free
  * Return: nothing
  */
-
 void free_list_adr(list_adr *head)
 {
 	if (head == NULL)
@@ -20,6 +19,7 @@ void free_list_adr(list_adr *head)
 /**
  * add_nodeadr - adds a new node at the beginning of a listint_t list
  * @head: list
+ * @adr: address of node
  * Return: the address of the new element, or NULL if it failed
  */
 list_adr *add_nodeadr(list_adr **head, const listint_t *adr)
@@ -38,9 +38,10 @@ list_adr *add_nodeadr(list_adr **head, const listint_t *adr)
 }
 
 /**
- * check_adrs
- * @head: list
- * Return: the address of the new element, or NULL if it failed
+ * check_adrs - check if address is already in list
+ * @adr: address to compare
+ * @adrs: list of arrays to compare
+ * Return: 1 if addres is not yet in the list, 0 otherwise
  */
 int check_adrs(const listint_t *adr, list_adr *adrs)
 {
