@@ -1,5 +1,13 @@
 # include "holberton.h"
 
+
+/**
+ * read_textfile - reads a text file and prints it to
+ * the POSIX standard output.
+ * @filename: file
+ * @letters: letters to read
+ * Return: letters readed
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int file_d, b_readed;
