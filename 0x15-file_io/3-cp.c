@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
+		write(1, "El errorrr\n", 11);
 		exit(97);
 	}
 	file1 = open(argv[1], O_RDONLY);
