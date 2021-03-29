@@ -24,7 +24,11 @@ int create_file(const char *filename, char *text_content)
 			len++;
 
 		if (write(file_d, text_content, len) == -1)
+		{
+			close(file_d);
 			return (-1);
+		}
 	}
+	close(file_d);
 	return (1);
 }
