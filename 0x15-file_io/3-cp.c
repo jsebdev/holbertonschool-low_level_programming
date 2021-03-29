@@ -18,7 +18,7 @@ void exit99(char *file)
  */
 void exit100(int fd)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd);
+	dprintf(2, "Er----ror: Can't close fd %d\n", fd);
 	exit(100);
 }
 
