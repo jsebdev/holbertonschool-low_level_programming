@@ -7,7 +7,7 @@
  */
 void exit99(char *file)
 {
-	dprintf(2, "Error: Can't write to %s\n", file);
+	dprintf(1, "Error: Can't write to %s\n", file);
 	exit(99);
 }
 
@@ -18,7 +18,7 @@ void exit99(char *file)
  */
 void exit100(int fd)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd);
+	dprintf(1, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
 
@@ -36,8 +36,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
-		write(1, "El errorrr\n", 11);
+		dprintf(1, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file1 = open(argv[1], O_RDONLY);
