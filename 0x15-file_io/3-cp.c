@@ -12,6 +12,7 @@ void exit99(char *file)
 	exit(99);
 }
 
+
 /**
  * exit100 - function to execute in error 100
  * @fd: file descriptor to pirnt in error message
@@ -58,7 +59,7 @@ int main(int argc, char **argv)
 	}
 	if (bytes == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
