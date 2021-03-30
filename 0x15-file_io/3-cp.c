@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 	if (file2 == -1)
 		exit99(argv[2]);
 
-	printf("mode = %d\n", S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	/* printf("mode = %d\n", S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH); */
 	while (bytes == 1024)
 	{
 		bytes = read(file1, buff, 1024);
