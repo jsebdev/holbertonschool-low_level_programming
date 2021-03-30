@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	while ((bytes = read(file1, buff, 1024)) > 0)
 	{
 		if (write(file2, buff, bytes) != bytes)
-			exit99(argv[1]);
+			exit99(argv[2]);
 	}
 	if (bytes == -1)
 	{
