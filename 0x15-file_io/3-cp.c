@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_EXCL, 0664);
+	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file2 == -1)
 		exit99(argv[2]);
 
@@ -55,11 +55,11 @@ int main(int argc, char **argv)
 	while (bytes == 1024)
 	{
 		bytes = read(file1, buff, 1024);
+		if (bytes == -1)
+			exit99(argv[1]);
 		write(file2, buff, bytes);
 	}
 
-	if (bytes == -1)
-		exit99(argv[1]);
 	if (close(file1) == -1)
 		exit100(file1);
 	if (close(file2) == -1)
