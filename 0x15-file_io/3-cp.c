@@ -47,10 +47,11 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	file2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_EXCL, 0664);
 	if (file2 == -1)
 		exit99(argv[2]);
 
+	printf("mode = %d\n", S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	while (bytes == 1024)
 	{
 		bytes = read(file1, buff, 1024);
