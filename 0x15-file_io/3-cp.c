@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		if (write(file2, buff, bytes) == -1)
+		if (write(file2, buff, bytes) != bytes)
 			exit99(argv[1]);
 	}
 
