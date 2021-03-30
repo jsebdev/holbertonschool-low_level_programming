@@ -53,13 +53,13 @@ int main(int argc, char **argv)
 
 	while ((bytes = read(file1, buff, 1024)) > 0)
 	{
-		if (bytes == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
 		if (write(file2, buff, bytes) != bytes)
 			exit99(argv[1]);
+	}
+	if (bytes == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 
 	if (close(file1) == -1)
