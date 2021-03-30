@@ -51,13 +51,16 @@ int main(int argc, char **argv)
 	if (file2 == -1)
 		exit99(argv[2]);
 
-	/* printf("mode = %d\n", S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH); */
 	while (bytes == 1024)
 	{
 		bytes = read(file1, buff, 1024);
 		if (bytes == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		if (write(file2, buff, bytes) == -1)
 			exit99(argv[1]);
-		write(file2, buff, bytes);
 	}
 
 	if (close(file1) == -1)
