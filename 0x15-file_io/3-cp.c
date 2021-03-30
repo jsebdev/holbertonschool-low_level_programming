@@ -1,5 +1,6 @@
 # include "holberton.h"
 
+#if 0
 /**
  * exit99 - function to execute error 99
  * @file: - file to print in error message
@@ -21,6 +22,7 @@ void exit100(int fd)
 	dprintf(2, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
+#endif
 
 /**
  * main - copies the content of a file to another file.
@@ -35,38 +37,35 @@ int main(int argc, char **argv)
 	int bytes = 1024;
 
 	if (argc != 3)
-	{
-		dprintf(2, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
 	file1 = open(argv[1], O_RDONLY);
 	if (file1 == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC,
 		     S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file2 == -1)
-		exit99(argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 
 	while ((bytes = read(file1, buff, 1024)) > 0)
 	{
 		if (write(file2, buff, bytes) != bytes)
-			exit99(argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	if (bytes == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 		exit(98);
 	}
 
 	if (close(file1) == -1)
-		exit100(file1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), exit(100);
 	if (close(file2) == -1)
-		exit100(file2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2), exit(100);
 
 	return (0);
 }
