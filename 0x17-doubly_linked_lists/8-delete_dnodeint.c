@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a new node at a given position.
- * @h: list
- * @idx: index to insert node
- * @n: number
- * Return: the address of the new node, or NULL if it failed
+ * delete_dnodeint_at_index - function that deletes the node at index
+ * index of a dlistint_t linked list.
+ * @head: list
+ * @index: index to insert node
+ * Return: Returns: 1 if it succeeded, -1 if it failed
 */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {

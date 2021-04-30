@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - returns the size of a dlistint
+ * dlistint_len - returns the length of a linked list h
  * @h: list
  * Return: returns the size of h
 */
