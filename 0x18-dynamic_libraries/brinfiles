@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd ..
+
+filename='files_to_bring'
+dir='0x18-dynamic_libraries'
+n=1
+while read line; do
+find -name "$line" -execdir cp -n {} ../"$dir" \;
+echo "$line"
+n=$((n+1))
+done < $filename
