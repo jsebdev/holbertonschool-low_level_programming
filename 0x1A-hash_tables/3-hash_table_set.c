@@ -1,32 +1,32 @@
 #include "hash_tables.h"
 
 /**
- * hash_djb2 - implementation of the djb2 algorithm
- * @str: string used to generate hash value
+ * hash_table_set - set key and value in hashtable
+ * @ht: hashtable
+ * @key: key
+ * @value: value
  *
- * Return: hash value
+ * Return: 1 if sucess, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
 
-	if (key == NULL || *key == '\0')
+	if (key == NULL || *key == '\0' || ht == NULL)
 		return (0);
-
 	index = key_index((unsigned char *)key, ht->size);
-
-	update_key((ht->array) + index, key, value);
-
-
+	if (update_key((ht->array) + index, key, value) == NULL)
+		return (0);
 	return (1);
 }
-
-
 hash_node_t *update_key(hash_node_t **list, const char *key,
 	const char *value)
 {
 	hash_node_t *node = NULL;
 	char *new_value = NULL;
+
+	if (list == NULL)
+		return (NULL);
 
 	node = *list;
 	while (node != NULL)
@@ -43,20 +43,21 @@ hash_node_t *update_key(hash_node_t **list, const char *key,
 		}
 		node = node->next;
 	}
-	return (add_node(list, key, value));
+	return (add_node_hashtable(list, key, value));
 }
 
 
-hash_node_t *add_node(hash_node_t **list, const char *key,
+hash_node_t *add_node_hashtable(hash_node_t **list, const char *key,
 		      const char *value)
 {
 	hash_node_t *node = NULL;
 
-	node = malloc(sizeof(hash_node_t *));
+	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (NULL);
 
 	node->key = strdup(key);
+
 	if (node->key == NULL)
 	{
 		free(node);
@@ -64,6 +65,7 @@ hash_node_t *add_node(hash_node_t **list, const char *key,
 	}
 
 	node->value = strdup(value);
+
 	if (node->value == NULL)
 	{
 		free(node->key);
@@ -75,3 +77,4 @@ hash_node_t *add_node(hash_node_t **list, const char *key,
 	*list = node;
 	return (node);
 }
+
