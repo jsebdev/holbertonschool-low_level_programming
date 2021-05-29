@@ -157,7 +157,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	unsigned long int index = 0;
 	shash_node_t *list_head = NULL;
 
-	if (key == NULL || *key == '\0')
+	if (key == NULL || *key == '\0' || ht == NULL)
 		return (NULL);
 
 	index = key_index((unsigned char *)key, ht->size);
@@ -188,7 +188,8 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *node = NULL;
 	int first = 1;
 
-	node = ht->shead;
+	if (ht == NULL)
+		return;	node = ht->shead;
 	printf("{");
 	while (node != NULL)
 	{
@@ -215,7 +216,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 	shash_node_t *node = NULL;
 	int first = 1;
 
-	node = ht->stail;
+	if (ht == NULL)
+		return;	node = ht->stail;
 	printf("{");
 	while (node != NULL)
 	{
