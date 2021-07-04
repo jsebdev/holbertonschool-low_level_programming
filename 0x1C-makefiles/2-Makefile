@@ -13,5 +13,5 @@ holberton.o: holberton.c m.h
 	$(CC) -c holberton.c
 
 main.o: main.c m.h
-	$(CC) -c main.c
+	$(CC) -c main.c -o main.o
 
