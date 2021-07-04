@@ -1,8 +1,8 @@
 CC = gcc
 SRC =  main.c holberton.c
 NAME = holberton
+RM = rm
 OBJ = $(SRC:.c=.o)
-	RM = rm
 
 all: $(OBJ)
 	-$(CC) $(OBJ) -o $(NAME)
