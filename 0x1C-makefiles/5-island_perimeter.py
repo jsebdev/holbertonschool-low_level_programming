@@ -9,24 +9,34 @@ def island_perimeter(grid):
     """
     Return the perimeter of an island
     """
+    if grid == None:
+        print("bam")
+        return None
+    if type(grid) != list or any([type(i) != list for i in grid])\
+            or any([any([type(i) != int for i in row]) for row in grid]):
+        print("bam2")
+        return None
+    if any([any([i not in [0, 1] for i in row]) for row in grid]):
+        print("bam3")
+        return None
     perimeter = 0
     for i, row in enumerate(grid):
         for j, land in enumerate(row):
             if land:
-                try:
+                if j - 1 < 0:
                     perimeter += -row[j-1] + 1
-                except IndexError:
-                    pass
+                else:
+                    perimeter += 1
                 try:
                     perimeter += -row[j+1] + 1
                 except IndexError:
-                    pass
-                try:
+                    perimeter += 1
+                if i - 1 < 0:
                     perimeter += -grid[i-1][j] + 1
-                except IndexError:
-                    pass
+                else:
+                    perimeter += 1
                 try:
                     perimeter += -grid[i+1][j] + 1
                 except IndexError:
-                    pass
+                    perimeter += 1
     return perimeter
