@@ -9,7 +9,7 @@ def island_perimeter(grid):
     """
     Return the perimeter of an island
     """
-    if grid == None:
+    if grid is None:
         return None
     if type(grid) != list or any([type(i) != list for i in grid])\
             or any([any([type(i) != int for i in row]) for row in grid]):
