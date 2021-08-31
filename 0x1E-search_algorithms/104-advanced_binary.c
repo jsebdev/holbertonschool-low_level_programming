@@ -20,7 +20,7 @@ int advanced_binary(int *array, size_t size, int value)
 	mid = (size - 1) / 2;
 	if (array[mid] == value)
 	{
-		downindex = (size > 1) ? advanced_binary(array, mid + 1, value) : 0;
+		downindex = (mid > 0) ? advanced_binary(array, mid + 1, value) : 0;
 		return (downindex);
 		/*downindex = advanced_binary(array, mid, value);*/
 		/*if (downindex == -1)*/
