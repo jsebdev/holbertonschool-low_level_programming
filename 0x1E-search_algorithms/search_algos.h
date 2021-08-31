@@ -58,12 +58,12 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 
 #define print_array(ARRAY, SIZE)\
 	do { \
-		unsigned int i = 0;\
-		while (i < (SIZE))\
+		unsigned int _i = 0;\
+		while (_i < (SIZE))\
 		{\
-			printf("%i", (ARRAY)[i]);\
-			i++;\
-			if (i != (SIZE))\
+			printf("%i", (ARRAY)[_i]);\
+			_i++;\
+			if (_i != (SIZE))\
 			{\
 				printf(", ");\
 			} \
