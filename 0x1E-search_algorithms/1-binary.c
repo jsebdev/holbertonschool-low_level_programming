@@ -15,7 +15,7 @@ int binary_search(int *array, size_t size, int value)
 
 	if (array == NULL || size == 0)
 		return (-1);
-	printf("searching in array: ");
+	printf("Searching in array: ");
 	print_array(array, size);
 
 	mid = (size - 1) / 2;
