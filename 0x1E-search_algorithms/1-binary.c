@@ -26,23 +26,3 @@ int binary_search(int *array, size_t size, int value)
 	upindex = binary_search(array + mid + 1, size - mid - 1, value);
 	return (upindex == -1 ? -1 : mid + 1 + upindex);
 }
-
-/**
- * print_array - print an int array separated by commas
- * @array: array
- * @size: array's size
- */
-void print_array(int *array, size_t size)
-{
-	size_t i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%i", array[i]);
-		i++;
-		if (i != size)
-			printf(", ");
-	}
-	printf("\n");
-}
