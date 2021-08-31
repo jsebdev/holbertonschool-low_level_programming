@@ -13,5 +13,8 @@ int bin_search_recursive(int *array, size_t size, size_t initial_index,
 void print_array(int *array, size_t size);
 int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
+int interpolation_search(int *array, size_t size, int value);
+int interpolation_search_recursive(int *array, size_t size, int value,
+		int initial_index);
 
 #endif
