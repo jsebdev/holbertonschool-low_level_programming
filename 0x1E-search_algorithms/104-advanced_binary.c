@@ -22,11 +22,6 @@ int advanced_binary(int *array, size_t size, int value)
 	{
 		downindex = (mid > 0) ? advanced_binary(array, mid + 1, value) : 0;
 		return (downindex);
-		/*downindex = advanced_binary(array, mid, value);*/
-		/*if (downindex == -1)*/
-			/*return (mid);*/
-		/*else*/
-			/*return (downindex);*/
 	}
 	else if (array[mid] > value)
 		return (advanced_binary(array, mid, value));
